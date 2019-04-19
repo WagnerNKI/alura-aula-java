@@ -1,6 +1,6 @@
 package bytebankAlura;
 
-public class Funcionario {
+public abstract class Funcionario {
 
 	String nome;
 	double salario;
@@ -8,9 +8,7 @@ public class Funcionario {
 	double bonificacao;
 	
 	
-	public double getBonificacao() {
-		return salario*0.1;
-	}
+	public abstract double getBonificacao();
 
 	public String getNome() {
 		return nome;

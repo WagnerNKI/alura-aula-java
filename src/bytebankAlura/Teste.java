@@ -14,13 +14,28 @@ public class Teste {
 		conta1.setTitular(cliente1);
 
 		Conta conta2 = new Conta(4444, 595959);
-
+		
+		conta1.deposita(200.0);
+		
+		conta1.transfere(55.0, conta2);
+		
+		System.out.println("Conta 1: " + conta1.getSaldo());
+		System.out.println("Conta 2: " + conta2.getSaldo());
+		
+		ContaPoupanca cp = new ContaPoupanca(1111, 1234);
+		ContaCorrente cc = new ContaCorrente(1112, 1234);
+		
+		cc.deposita(100.0);
+		cc.saca(50.0);
+		
+		System.out.println("Saldo pós saque: " + cc.getSaldo());
+		
+		cc.transfere(20.0, cp);
+		
+		System.out.println("Saldo pós tranferencia: " + cc.getSaldo());
+		
 		System.out.println("Quantidade de contas: " + Conta.getQuantidadeContas());
-
-		Funcionario funcionario = new Funcionario();
-		
-		funcionario.setSalario(2000.0);
-		
+				
 		Funcionario gerente = new Gerente();
 		
 		gerente.setSalario(5000.0);
@@ -29,9 +44,8 @@ public class Teste {
 		
 		editorVideo.setSalario(3000.0);
 		
-		System.out.println(funcionario.getBonificacao());
-		System.out.println(gerente.getBonificacao());
-		System.out.println(editorVideo.getBonificacao());
+		System.out.println("Bonificação do gerente: " + gerente.getBonificacao());
+		System.out.println("Bonificação do editor: " + editorVideo.getBonificacao());
 		
 	}
 }

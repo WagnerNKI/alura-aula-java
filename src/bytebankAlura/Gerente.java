@@ -5,7 +5,7 @@ public class Gerente extends Funcionario {
 	private int senha;
 
 	public double getBonificacao() {
-		return super.salario + super.getBonificacao();
+		return super.salario;
 	}
 
 	public int getSenha() {
